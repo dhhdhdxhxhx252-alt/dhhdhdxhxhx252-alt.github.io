@@ -483,6 +483,11 @@
       return jresp(["/extensions/ofm-manager.js"]);
     }
 
+    /* каталог из воркфлоу: закрывает ВСЕ типы нод 15 воркфлоу (рукописные
+       дефы выше главнее) — «Missing Node Types» в превью больше не бывает */
+    var GEN = (typeof window !== "undefined" && window.OFM_NODE_DEFS) || {};
+    for (var gk in GEN) if (!OBJ[gk]) OBJ[gk] = GEN[gk];
+
     if (method === "GET" && urlPath === "/api/object_info") return jresp(OBJ);
     if (method === "GET" && urlPath.indexOf("/api/object_info/") === 0) {
       var nt = decodeURIComponent(urlPath.slice("/api/object_info/".length));
