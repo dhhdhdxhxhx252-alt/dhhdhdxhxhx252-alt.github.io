@@ -1,0 +1,1803 @@
+{
+  "id": "df25d628-fd5b-48ef-a31a-a7005fe28edb",
+  "revision": 0,
+  "last_node_id": 84,
+  "last_link_id": 253,
+  "nodes": [
+    {
+      "id": 70,
+      "type": "INSTARAW_ImageListFromBatch",
+      "pos": [
+        5042.430366142009,
+        -1262.8994861535946
+      ],
+      "size": [
+        286.4500030517578,
+        26
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 157
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "shape": 6,
+          "type": "IMAGE",
+          "links": [
+            238
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "INSTARAW_ImageListFromBatch"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 71,
+      "type": "INSTARAW_ImageListFromBatch",
+      "pos": [
+        5042.430366142009,
+        -1176.4588490340846
+      ],
+      "size": [
+        286.4500030517578,
+        26
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 158
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "shape": 6,
+          "type": "IMAGE",
+          "links": [
+            239
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "INSTARAW_ImageListFromBatch"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 72,
+      "type": "INSTARAW_ImageListFromBatch",
+      "pos": [
+        5042.430366142009,
+        -1101.4643190018435
+      ],
+      "size": [
+        286.4500030517578,
+        26
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 159
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "shape": 6,
+          "type": "IMAGE",
+          "links": [
+            240
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "INSTARAW_ImageListFromBatch"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 80,
+      "type": "MarkdownNote",
+      "pos": [
+        -662.5867633155159,
+        -1246.3328390608458
+      ],
+      "size": [
+        241.55882263183594,
+        88
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "## Don't change the model as BIG only supports NBPRO. Update soon tho."
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 59,
+      "type": "INSTARAW_NanoBananaAspectRatio",
+      "pos": [
+        -349.5120112472002,
+        -1199.9036243998016
+      ],
+      "size": [
+        270,
+        246
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "STRING",
+          "links": [
+            233
+          ]
+        },
+        {
+          "name": "resolution",
+          "type": "STRING",
+          "links": [
+            237
+          ]
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            235,
+            244,
+            245,
+            246
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            236,
+            247,
+            248,
+            249
+          ]
+        },
+        {
+          "name": "aspect_label",
+          "type": "STRING",
+          "links": [
+            250,
+            251,
+            252,
+            253
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "INSTARAW_NanoBananaAspectRatio"
+      },
+      "widgets_values": [
+        "3:4 (Portrait)",
+        "1K",
+        null
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 61,
+      "type": "PreviewImage",
+      "pos": [
+        6761.2357868661975,
+        -1330.6959329442004
+      ],
+      "size": [
+        2339.4365156430613,
+        2110.6275309678167
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 242
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.66",
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": [],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 31,
+      "type": "LoadImage",
+      "pos": [
+        2351.8642000582395,
+        -637.7949487795898
+      ],
+      "size": [
+        270,
+        314.0000000000001
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 2,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            63
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "title": "CHARACTER REF",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.66",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "rgthree.compare._temp_ffejc_00005_.png",
+        "image"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 66,
+      "type": "INSTARAW_AdvancedImageLoader",
+      "pos": [
+        1753.4011467048695,
+        -1330.6959329442004
+      ],
+      "size": [
+        868.46305335337,
+        619
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": true
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 246
+        },
+        {
+          "name": "height",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 249
+        },
+        {
+          "name": "aspect_label",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "aspect_label"
+          },
+          "link": 253
+        },
+        {
+          "name": "enable_img2img",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_img2img"
+          },
+          "link": 153
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            159,
+            180
+          ]
+        },
+        {
+          "name": "index",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "total",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "info",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "INSTARAW_AdvancedImageLoader",
+        "batch_data": "{\"latents\":[],\"order\":[],\"total_count\":0}",
+        "txt2img_data_backup": "{\"images\":[],\"order\":[],\"total_count\":0}",
+        "img2img_data_backup": "{\"images\":[],\"order\":[],\"total_count\":0}"
+      },
+      "widgets_values": [
+        "Batch Tensor",
+        "Center Crop",
+        0,
+        512,
+        512,
+        true,
+        "{\"latents\":[],\"order\":[],\"total_count\":0}",
+        "{\"latents\":[],\"order\":[],\"total_count\":0}",
+        "{\"latents\":[],\"order\":[],\"total_count\":0}"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 55,
+      "type": "INSTARAW_API_ModelSelector",
+      "pos": [
+        -662.5867633155159,
+        -1099.8337957375109
+      ],
+      "size": [
+        241.55882263183594,
+        126.5096435546875
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "STRING",
+          "links": [
+            230
+          ]
+        }
+      ],
+      "title": "🤖 I2I (Edit) Model Selector",
+      "properties": {
+        "aux_id": "instara-io/ComfyUI_INSTARAW",
+        "Node name for S&R": "INSTARAW_API_ModelSelector",
+        "ver": "12afb909b3380bd4a3f118061654dd72d1edcd4c",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.2.2"
+        }
+      },
+      "widgets_values": [
+        "Nano Banana Pro",
+        "⚠️ For this model, the fal.ai provider is unreliable for Image-to-Image (Edit) tasks. wavespeed.ai recommended."
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 56,
+      "type": "INSTARAW_API_ProviderSelector",
+      "pos": [
+        -1029.7319515649272,
+        -1099.8337957375109
+      ],
+      "size": [
+        327.4509582519531,
+        126.5096435546875
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "wavespeed_api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "wavespeed_api_key"
+          },
+          "link": 102
+        },
+        {
+          "name": "fal_api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "fal_api_key"
+          },
+          "link": 103
+        }
+      ],
+      "outputs": [
+        {
+          "name": "provider",
+          "type": "STRING",
+          "links": [
+            229
+          ]
+        },
+        {
+          "name": "api_key",
+          "type": "STRING",
+          "links": [
+            228
+          ]
+        }
+      ],
+      "title": "🔑 I2I (Edit) Provider",
+      "properties": {
+        "aux_id": "instara-io/ComfyUI_INSTARAW",
+        "Node name for S&R": "INSTARAW_API_ProviderSelector",
+        "ver": "12afb909b3380bd4a3f118061654dd72d1edcd4c",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.2.2"
+        }
+      },
+      "widgets_values": [
+        "wavespeed.ai",
+        "703ef3cba65c9b4123d5542fb08142edd193647682bddc8231a880027c3a2619",
+        ""
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 20,
+      "type": "INSTARAW_AdvancedImageLoader",
+      "pos": [
+        -37.17284920446542,
+        -1323.280532453633
+      ],
+      "size": [
+        868.46305335337,
+        603
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 244
+        },
+        {
+          "name": "height",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 247
+        },
+        {
+          "name": "aspect_label",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "aspect_label"
+          },
+          "link": 251
+        },
+        {
+          "name": "enable_img2img",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_img2img"
+          },
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            75,
+            157
+          ]
+        },
+        {
+          "name": "index",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "total",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "info",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "INSTARAW_AdvancedImageLoader",
+        "batch_data": "{\"latents\":[],\"order\":[],\"total_count\":0}",
+        "txt2img_data_backup": "{\"images\":[{\"id\":\"9355b667-5f99-4507-9614-17d3df1df791\",\"filename\":\"9355b667-5f99-4507-9614-17d3df1df791.png\",\"original_name\":\"rgthree.compare._temp_ffejc_00005_.png\",\"width\":1440,\"height\":1920,\"thumbnail\":\"thumb_9355b667-5f99-4507-9614-17d3df1df791.png\",\"repeat_count\":1},{\"id\":1765813710859.7844,\"filename\":\"9355b667-5f99-4507-9614-17d3df1df791.png\",\"original_name\":\"rgthree.compare._temp_ffejc_00005_.png\",\"width\":1440,\"height\":1920,\"thumbnail\":\"thumb_9355b667-5f99-4507-9614-17d3df1df791.png\",\"repeat_count\":1},{\"id\":1765813718860.7083,\"filename\":\"9355b667-5f99-4507-9614-17d3df1df791.png\",\"original_name\":\"rgthree.compare._temp_ffejc_00005_.png\",\"width\":1440,\"height\":1920,\"thumbnail\":\"thumb_9355b667-5f99-4507-9614-17d3df1df791.png\",\"repeat_count\":1},{\"id\":1765813718861.731,\"filename\":\"9355b667-5f99-4507-9614-17d3df1df791.png\",\"original_name\":\"rgthree.compare._temp_ffejc_00005_.png\",\"width\":1440,\"height\":1920,\"thumbnail\":\"thumb_9355b667-5f99-4507-9614-17d3df1df791.png\",\"repeat_count\":1}],\"order\":[\"9355b667-5f99-4507-9614-17d3df1df791\",1765813710859.7844,1765813718860.7083,1765813718861.731],\"total_count\":4}",
+        "img2img_data_backup": "{\"images\":[],\"order\":[],\"total_count\":0}"
+      },
+      "widgets_values": [
+        "Batch Tensor",
+        "Center Crop",
+        0,
+        512,
+        512,
+        true,
+        "{\"latents\":[],\"order\":[],\"total_count\":0}",
+        "{\"latents\":[],\"order\":[],\"total_count\":0}",
+        "{\"latents\":[],\"order\":[],\"total_count\":0}"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 65,
+      "type": "INSTARAW_AdvancedImageLoader",
+      "pos": [
+        858.114148750202,
+        -1324.8196463985632
+      ],
+      "size": [
+        868.46305335337,
+        627
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": true
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 245
+        },
+        {
+          "name": "height",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 248
+        },
+        {
+          "name": "aspect_label",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "aspect_label"
+          },
+          "link": 252
+        },
+        {
+          "name": "enable_img2img",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_img2img"
+          },
+          "link": 152
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            158,
+            179
+          ]
+        },
+        {
+          "name": "index",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "total",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "info",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "INSTARAW_AdvancedImageLoader",
+        "batch_data": "{\"latents\":[],\"order\":[],\"total_count\":0}",
+        "txt2img_data_backup": "{\"images\":[{\"id\":\"5b070562-c0a4-4586-9e59-fa484f40f19f\",\"filename\":\"5b070562-c0a4-4586-9e59-fa484f40f19f.webp\",\"original_name\":\"d8447f0dda55eac2fb298157ba1468b52fd7a2fe_low.webp\",\"width\":474,\"height\":711,\"thumbnail\":\"thumb_5b070562-c0a4-4586-9e59-fa484f40f19f.webp\",\"repeat_count\":1},{\"id\":1765813713737.8164,\"filename\":\"5b070562-c0a4-4586-9e59-fa484f40f19f.webp\",\"original_name\":\"d8447f0dda55eac2fb298157ba1468b52fd7a2fe_low.webp\",\"width\":474,\"height\":711,\"thumbnail\":\"thumb_5b070562-c0a4-4586-9e59-fa484f40f19f.webp\",\"repeat_count\":1},{\"id\":1765813713738.6548,\"filename\":\"5b070562-c0a4-4586-9e59-fa484f40f19f.webp\",\"original_name\":\"d8447f0dda55eac2fb298157ba1468b52fd7a2fe_low.webp\",\"width\":474,\"height\":711,\"thumbnail\":\"thumb_5b070562-c0a4-4586-9e59-fa484f40f19f.webp\",\"repeat_count\":1},{\"id\":1765813713739.6074,\"filename\":\"5b070562-c0a4-4586-9e59-fa484f40f19f.webp\",\"original_name\":\"d8447f0dda55eac2fb298157ba1468b52fd7a2fe_low.webp\",\"width\":474,\"height\":711,\"thumbnail\":\"thumb_5b070562-c0a4-4586-9e59-fa484f40f19f.webp\",\"repeat_count\":1}],\"order\":[\"5b070562-c0a4-4586-9e59-fa484f40f19f\",1765813713737.8164,1765813713738.6548,1765813713739.6074],\"total_count\":4}",
+        "img2img_data_backup": "{\"images\":[],\"order\":[],\"total_count\":0}"
+      },
+      "widgets_values": [
+        "Batch Tensor",
+        "Center Crop",
+        0,
+        512,
+        512,
+        true,
+        "{\"latents\":[],\"order\":[],\"total_count\":0}",
+        "{\"latents\":[],\"order\":[],\"total_count\":0}",
+        "{\"latents\":[],\"order\":[],\"total_count\":0}"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 79,
+      "type": "INSTARAW_BatchImageGenerator",
+      "pos": [
+        5777.644416456695,
+        -1330.6959329442004
+      ],
+      "size": [
+        918.4477446272734,
+        893
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "api_key",
+          "type": "STRING",
+          "link": 228
+        },
+        {
+          "name": "provider",
+          "type": "STRING",
+          "link": 229
+        },
+        {
+          "name": "model",
+          "type": "STRING",
+          "link": 230
+        },
+        {
+          "name": "prompt_list_positive",
+          "type": "STRING",
+          "link": 231
+        },
+        {
+          "name": "aspect_ratio",
+          "type": "STRING",
+          "link": 233
+        },
+        {
+          "name": "prompt_list_negative",
+          "shape": 7,
+          "type": "STRING",
+          "link": 232
+        },
+        {
+          "name": "seed_list",
+          "shape": 7,
+          "type": "INT",
+          "link": 234
+        },
+        {
+          "name": "width",
+          "shape": 7,
+          "type": "INT",
+          "link": 235
+        },
+        {
+          "name": "height",
+          "shape": 7,
+          "type": "INT",
+          "link": 236
+        },
+        {
+          "name": "resolution",
+          "shape": 7,
+          "type": "STRING",
+          "link": 237
+        },
+        {
+          "name": "images",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 238
+        },
+        {
+          "name": "images2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 239
+        },
+        {
+          "name": "images3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 240
+        },
+        {
+          "name": "images4",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "enable_img2img",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_img2img"
+          },
+          "link": 241
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "shape": 6,
+          "type": "IMAGE",
+          "links": [
+            242
+          ]
+        },
+        {
+          "name": "prompt_list_positive",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "indexes",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "count",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "failed_count",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "INSTARAW_BatchImageGenerator",
+        "big_jobs_data": "[]"
+      },
+      "widgets_values": [
+        100,
+        3,
+        600,
+        false,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        "INSTARAW",
+        1422,
+        "[]",
+        ""
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 21,
+      "type": "PrimitiveBoolean",
+      "pos": [
+        -349.5120112472002,
+        -1332.022103258484
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "links": [
+            18,
+            152,
+            153,
+            241
+          ]
+        }
+      ],
+      "title": "ENABLE IMG TO IMG?",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.66",
+        "Node name for S&R": "PrimitiveBoolean"
+      },
+      "widgets_values": [
+        false
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 82,
+      "type": "INSTARAW_BrandingNode",
+      "pos": [
+        -600.2676683237979,
+        -1531.752262753555
+      ],
+      "size": [
+        195.91818237304688,
+        105
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Powered by 🍑",
+      "properties": {
+        "aux_id": "instara-io/ComfyUI_INSTARAW",
+        "Node name for S&R": "INSTARAW_BrandingNode",
+        "logo_url": "https://instara.s3.us-east-1.amazonaws.com/INSTARAW_logomark_only.svg",
+        "width": 120,
+        "height": 105,
+        "ver": "12afb909b3380bd4a3f118061654dd72d1edcd4c",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.2.2"
+        }
+      },
+      "widgets_values": [],
+      "bgcolor": "transparent",
+      "boxcolor": "transparent"
+    },
+    {
+      "id": 26,
+      "type": "easy string",
+      "pos": [
+        -1374.8128176794244,
+        -1333.3453596544891
+      ],
+      "size": [
+        288.4591996354127,
+        58
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "string",
+          "type": "STRING",
+          "links": [
+            66
+          ]
+        }
+      ],
+      "title": "🔑 XAI API KEY (keep private)",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.4",
+        "Node name for S&R": "easy string"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 32,
+      "type": "easy string",
+      "pos": [
+        -1374.8128176794244,
+        -1211.29660174277
+      ],
+      "size": [
+        288.4591996354127,
+        58
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "string",
+          "type": "STRING",
+          "links": [
+            65
+          ]
+        }
+      ],
+      "title": "🔑 GEMINI API KEY",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.4",
+        "Node name for S&R": "easy string"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 57,
+      "type": "PrimitiveString",
+      "pos": [
+        -1374.8128176794244,
+        -1089.2478438310502
+      ],
+      "size": [
+        288.4591996354127,
+        58
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            102
+          ]
+        }
+      ],
+      "title": "🔑 wavespeed.ai API KEY",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.60",
+        "Node name for S&R": "PrimitiveString",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.2.2"
+        }
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 58,
+      "type": "PrimitiveString",
+      "pos": [
+        -1374.8128176794244,
+        -967.1990859193334
+      ],
+      "size": [
+        288.4591996354127,
+        58
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            103
+          ]
+        }
+      ],
+      "title": "🔑 fal.ai API KEY (keep private)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.60",
+        "Node name for S&R": "PrimitiveString",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.2.2"
+        }
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 43,
+      "type": "INSTARAW_RealityPromptGenerator",
+      "pos": [
+        2658.5123751673277,
+        -1330.6959329442004
+      ],
+      "size": [
+        3053.9884155071377,
+        2225
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 75
+        },
+        {
+          "name": "images2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 179
+        },
+        {
+          "name": "images3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 180
+        },
+        {
+          "name": "images4",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "character_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 63
+        },
+        {
+          "name": "gemini_api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "gemini_api_key"
+          },
+          "link": 65
+        },
+        {
+          "name": "grok_api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "grok_api_key"
+          },
+          "link": 66
+        },
+        {
+          "name": "aspect_label",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "aspect_label"
+          },
+          "link": 250
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt_list_positive",
+          "shape": 6,
+          "type": "STRING",
+          "links": [
+            231
+          ]
+        },
+        {
+          "name": "prompt_list_negative",
+          "shape": 6,
+          "type": "STRING",
+          "links": [
+            232
+          ]
+        },
+        {
+          "name": "seed_list",
+          "shape": 6,
+          "type": "INT",
+          "links": [
+            234
+          ]
+        },
+        {
+          "name": "generation_count",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "resolved_mode",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "INSTARAW_RealityPromptGenerator",
+        "prompt_batch_data": "[]",
+        "prompts_db_cache": null,
+        "bookmarks": "[]",
+        "active_tab": "library",
+        "library_filters": "{\"tags\":[],\"content_type\":\"any\",\"safety_level\":\"any\",\"shot_type\":\"any\",\"quality\":\"any\",\"search_query\":\"\",\"show_bookmarked\":false,\"sdxl_mode\":false,\"prompt_source\":\"all\"}",
+        "creative_system_prompt": "",
+        "creative_temperature": 0.9,
+        "creative_top_p": 0.9,
+        "generation_style": "reality",
+        "enable_library_inspiration": true,
+        "enable_expressions": true,
+        "enabled_expressions": "[\"Neutral/Natural\",\"Smiling/Happy\",\"Laughing/Joyful\",\"Sexy/Seductive\",\"Flirty/Playful\",\"Blowing a Kiss\",\"Winking\",\"Pouty/Duck Face\",\"Surprised/Excited\",\"Confident/Fierce\",\"Shy/Cute\",\"Ahegao/Pleasure\",\"Biting Lip\",\"Tongue Out\",\"Sultry/Smoldering\"]",
+        "default_expression": "Neutral/Natural",
+        "default_mix_frequency": 0,
+        "current_expression_index": 5,
+        "custom_template": "{USER_INPUT}",
+        "show_system_prompt_preview": true,
+        "creative_model": "grok-4-fast-reasoning",
+        "prompt_queue_data": "[{\"id\":\"01KAVMZ44BSP4PQTTTYQP8KV5G\",\"positive_prompt\":\"photorealistic high-resolution professional photograph of a walk-in closet interior with hanging clothes on racks, wooden shelves, a window allowing natural sunlight, LED strip lights along the walls, scattered items on the beige carpeted floor including multiple pairs of colorful sneakers like white and green Nike shoes, cardboard shoe boxes, a large black Louis Vuitton handbag, crumpled papers, and a green gift box; in the scene, a middle-aged man with short dark hair wearing a long brown fur coat, gold chains, sunglasses, and an open-collared shirt stands holding up a pair of oversized gray pants; next to him kneeling on the floor is a bald middle-aged man in a black long-sleeve shirt, layered necklaces, and blue jeans, reaching out to touch the pants leg while surrounded by the scattered shoes; a young girl around 10 years old with long dark hair wearing a sparkling gold sleeveless dress, a jeweled crown, gold necklace, and barefoot stands with one leg extended playfully, smiling excitedly while holding a black handbag; behind them standing and smiling is an elderly man with blonde combed-back hair in a dark blue suit jacket, white shirt, red tie, and gray pants; the group appears in a joyful, candid moment, sharp focus, natural indoor lighting with soft shadows, high detail on fabrics, textures, and expressions\",\"negative_prompt\":\"unrealistic, illustration, painting, drawing, art, artistic, low quality, deformed, bad anatomy, blurry, amateur, overexposed, underexposed, cartoon, sketch, abstract\",\"repeat_count\":1,\"tags\":[\"closet interior\",\"group portrait\",\"photorealistic\",\"indoor photography\",\"candid moment\",\"natural lighting\"],\"source_id\":\"gen_1764004897849_599f9l76p\",\"seed\":1111111,\"seed_control\":\"randomize\"},{\"id\":\"01KAVMZ98CSP9MB9GEDBX3HF4R\",\"positive_prompt\":\"photorealistic high-resolution professional photography of a group of people floating on a large pink inflatable flamingo pool float in a clear blue swimming pool, sunny outdoor poolside setting with tiled deck and palm tree in background, detailed water reflections and ripples, the group includes a blonde woman with long wavy hair, oversized black sunglasses, full lips, wearing a white bikini top and tiara, making a peace sign with her hand, an elderly man with orange-tinted skin, white combed-over hair, grinning widely while holding a drink, a man with short dark hair, black sunglasses, shirtless holding a smartphone taking a selfie, a bald muscular man with tattoos on his arm, flexing his bicep shirtless, and a small red-haired boy in blue swim shorts sitting on the float, everyone smiling and relaxed, holding champagne bottles and plastic cups with beverages, gold chain necklaces on some, natural sunlight, sharp focus, high detail on skin textures, fabrics, and float material\",\"negative_prompt\":\"unrealistic, illustration, painting, drawing, art, artistic, low quality, deformed, bad anatomy, blurry, amateur, cartoon, anime, abstract, overexposed, underexposed, grainy\",\"repeat_count\":1,\"tags\":[\"pool party\",\"celebrity group\",\"photorealistic\",\"outdoor pool\",\"summer vibe\",\"selfie pose\"],\"source_id\":\"gen_1764004896939_xmg5edtrp\",\"seed\":1111111,\"seed_control\":\"randomize\"},{\"id\":\"01KAVN0DGM24DSXCSEWBZP75Z3\",\"positive_prompt\":\"photorealistic high-resolution professional photography of a crowded interior of a blue-lit commercial walk-in freezer with metallic walls and shelves stocked with food items including cakes on plates, stainless steel pots, and dairy products, natural blue ambient lighting from overhead fixtures creating a cool atmosphere, sharp focus and detailed textures on all surfaces, in the foreground standing confidently former President Donald Trump dressed in a dark blue suit with red tie smiling broadly while holding a whole roasted chicken in his right hand, next to him Elon Musk in a black t-shirt grinning and holding a yellow slice of cheese to his mouth, to the right a young blonde woman in a sparkling pink evening dress laughing joyfully while squatting and holding a large glass jar of pickles with both hands, her long blonde hair flowing, in the background a muscular man with tattoos wearing a black Balenciaga hoodie and gold chains leaning against the shelf holding a drink, another figure partially visible, everyone posed dynamically with food and drinks, high detail on clothing fabrics, skin textures, metallic reflections, and food items, masterpiece best quality\",\"negative_prompt\":\"unrealistic, illustration, painting, drawing, art, artistic, low quality, deformed, bad anatomy, blurry, amateur, overexposed, underexposed, cartoon, sketch, abstract\",\"repeat_count\":1,\"tags\":[\"photorealistic\",\"group portrait\",\"indoor freezer\",\"blue lighting\",\"celebrities\",\"food holding\",\"detailed textures\"],\"source_id\":\"gen_1764004893387_i105mnuim\",\"seed\":1111111,\"seed_control\":\"randomize\"},{\"id\":\"01KAVNQMZAHW4BRK7N41N6SA67\",\"positive_prompt\":\"photorealistic high-resolution professional photography of a group of people floating on a large pink inflatable flamingo pool float in a clear blue swimming pool, sunny outdoor poolside setting with tiled deck and palm tree in background, detailed water reflections and ripples, the group includes a blonde woman with long wavy hair, oversized black sunglasses, full lips, wearing a white bikini top and tiara, making a peace sign with her hand, an elderly man with orange-tinted skin, white combed-over hair, grinning widely while holding a drink, a man with short dark hair, black sunglasses, shirtless holding a smartphone taking a selfie, a bald muscular man with tattoos on his arm, flexing his bicep shirtless, and a small red-haired boy in blue swim shorts sitting on the float, everyone smiling and relaxed, holding champagne bottles and plastic cups with beverages, gold chain necklaces on some, natural sunlight, sharp focus, high detail on skin textures, fabrics, and float material\",\"negative_prompt\":\"unrealistic, illustration, painting, drawing, art, artistic, low quality, deformed, bad anatomy, blurry, amateur, cartoon, anime, abstract, overexposed, underexposed, grainy\",\"repeat_count\":1,\"tags\":[\"pool party\",\"celebrity group\",\"photorealistic\",\"outdoor pool\",\"summer vibe\",\"selfie pose\"],\"source_id\":\"gen_1764004896939_xmg5edtrp\",\"seed\":1111111,\"seed_control\":\"randomize\"},{\"id\":\"01KAVNQPE7XZPQ80NE7ZF40H5D\",\"positive_prompt\":\"photorealistic high-resolution photograph of a luxurious home theater room with dim red and blue ambient lighting from ceiling panels and wall sconces, large flat-screen TV mounted on the wall displaying a intense boxing match with two muscular fighters in action inside a ring, polished wooden bar counter in the background stocked with various bottles of liquor including whiskey and vodka, four brown leather recliner chairs arranged in a row facing the screen, in the left chair a middle-aged man with short dark hair wearing a black hoodie and jeans, gold chain necklace, holding a glass of amber liquid and gesturing with his hand, in the center chair former President Donald Trump mid-70s with blonde combed-back hair, wearing a dark blue suit jacket, white dress shirt, red tie, looking animated and shouting into a cell phone held to his ear, legs crossed casually, in the right chair Elon Musk mid-50s with short dark hair, wearing a black t-shirt and jeans, sitting relaxed with hands in lap watching the screen intently, in the far right chair a young blonde woman with long wavy hair asleep leaning back, covered by a white blanket with 'Moncler' logo partially visible, open white double doors in the foreground revealing the room from a hallway, sharp focus, professional photography, natural indoor lighting, detailed textures on leather seats and wooden elements\",\"negative_prompt\":\"unrealistic, illustration, painting, drawing, art, artistic, low quality, deformed, bad anatomy, blurry, amateur, overexposed, underexposed, cartoon, sketch\",\"repeat_count\":1,\"tags\":[\"home theater\",\"indoor\",\"celebrities\",\"donald trump\",\"elon musk\",\"boxing match on tv\",\"leather recliners\",\"ambient lighting\"],\"source_id\":\"gen_1764004896818_88vvavctc\",\"seed\":1111111,\"seed_control\":\"randomize\"},{\"id\":\"01KAVNQQKZW4PG79HA09F60PM5\",\"positive_prompt\":\"photorealistic high-resolution professional photograph of a walk-in closet interior with hanging clothes on racks, wooden shelves, a window allowing natural sunlight, LED strip lights along the walls, scattered items on the beige carpeted floor including multiple pairs of colorful sneakers like white and green Nike shoes, cardboard shoe boxes, a large black Louis Vuitton handbag, crumpled papers, and a green gift box; in the scene, a middle-aged man with short dark hair wearing a long brown fur coat, gold chains, sunglasses, and an open-collared shirt stands holding up a pair of oversized gray pants; next to him kneeling on the floor is a bald middle-aged man in a black long-sleeve shirt, layered necklaces, and blue jeans, reaching out to touch the pants leg while surrounded by the scattered shoes; a young girl around 10 years old with long dark hair wearing a sparkling gold sleeveless dress, a jeweled crown, gold necklace, and barefoot stands with one leg extended playfully, smiling excitedly while holding a black handbag; behind them standing and smiling is an elderly man with blonde combed-back hair in a dark blue suit jacket, white shirt, red tie, and gray pants; the group appears in a joyful, candid moment, sharp focus, natural indoor lighting with soft shadows, high detail on fabrics, textures, and expressions\",\"negative_prompt\":\"unrealistic, illustration, painting, drawing, art, artistic, low quality, deformed, bad anatomy, blurry, amateur, overexposed, underexposed, cartoon, sketch, abstract\",\"repeat_count\":1,\"tags\":[\"closet interior\",\"group portrait\",\"photorealistic\",\"indoor photography\",\"candid moment\",\"natural lighting\"],\"source_id\":\"gen_1764004897849_599f9l76p\",\"seed\":1111111,\"seed_control\":\"randomize\"}]",
+        "use_character_likeness": false,
+        "inspiration_count": 10,
+        "character_text_input": "",
+        "generation_count": 5,
+        "character_complexity": "concise",
+        "user_text_input": "vinnie from Biker Mice from Mars",
+        "variable_help_expanded": false,
+        "show_custom_template_preview": true,
+        "custom_library_expanded": true,
+        "is_sdxl": false,
+        "img2img_preset": "none",
+        "img2img_custom_instructions": "",
+        "txt2img_theme": "casual_lifestyle",
+        "model_preset": "nano_banana_character",
+        "model_instructions": "CRITICAL: Write as IMAGE EDIT INSTRUCTIONS, not a description. Use this EXACT structure:\n\n1. START WITH: Brief base description of subject (even if redundant)\n2. ADD IMMEDIATELY: \"using reference image 1 for ultimate character consistency in face and body anatomy\"\n3. DESCRIBE CURRENT: Expression/emotion and current action\n4. USE \"REIMAGINED\" FOR EDITS:\n   - \"reimagined background with [detailed new background]\"\n   - \"She wears a reimagined outfit: [detailed clothing description]\"\n   - \"Her pose is reimagined as [detailed new pose]\"\n   - \"Lighting reimagined as [detailed lighting setup]\"\n5. END WITH: Technical photo details (camera type, quality, grain, artifacts, aesthetic)\n\nEXAMPLE STRUCTURE:\n\"A [brief subject description], using reference image 1 for ultimate character consistency in face and body anatomy. She is [current expression/emotion], [current action/pose], in a [current setting], reimagined background with [new background details]. She wears a reimagined outfit: [outfit details]. Her pose is reimagined as [new pose details]. Lighting reimagined as [lighting setup]. [Technical photo quality details - grain, sensor noise, artifacts, style].\"\n\nKEY PHRASES TO USE:\n- \"using reference image 1 for... character consistency in face and body anatomy\"\n- \"reimagined background with\"\n- \"reimagined outfit:\"\n- \"Her pose is reimagined as\"\n- \"Lighting reimagined as\"\n\nBe EXTREMELY detailed in every section - specify colors, materials, positions, angles, lighting quality, camera artifacts.",
+        "theme_preset": "hot_nurse",
+        "user_instructions": "",
+        "clean_mode": false
+      },
+      "widgets_values": [
+        "",
+        "",
+        "",
+        "[]",
+        "[]",
+        false
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 83,
+      "type": "Label (rgthree)",
+      "pos": [
+        1250.1701811336739,
+        -1606.3027771112306
+      ],
+      "size": [
+        2145.60009765625,
+        180
+      ],
+      "flags": {
+        "allow_interaction": true
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "https://t.me/+l1nCXAoNBudhZjZi",
+      "properties": {
+        "fontSize": 180,
+        "fontFamily": "serif",
+        "fontColor": "#ffffff",
+        "textAlign": "left",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0,
+        "angle": 0
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 84,
+      "type": "Label (rgthree)",
+      "pos": [
+        -369.1942201096641,
+        -1612.0341529338107
+      ],
+      "size": [
+        1429.88330078125,
+        180
+      ],
+      "flags": {
+        "allow_interaction": true
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "[AI Syndicate]",
+      "properties": {
+        "fontSize": 180,
+        "fontFamily": "serif",
+        "fontColor": "#ffffff",
+        "textAlign": "left",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0,
+        "angle": 0
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 81,
+      "type": "Note",
+      "pos": [
+        -1381.533860876499,
+        -1568.598880672364
+      ],
+      "size": [
+        548.9020021113624,
+        158.68235282108253
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "WELCOME 👋",
+      "properties": {
+        "ue_properties": {
+          "version": "7.2.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "                                                                                              \n                                                                                              \n`7MMF'`7MN.   `7MF'.M\"\"\"bgd MMP\"\"MM\"\"YMM   db      `7MM\"\"\"Mq.        db `7MMF'     A     `7MF'\n  MM    MMN.    M ,MI    \"Y P'   MM   `7  ;MM:       MM   `MM.      ;MM:  `MA     ,MA     ,V  \n  MM    M YMb   M `MMb.          MM      ,V^MM.      MM   ,M9      ,V^MM.  VM:   ,VVM:   ,V   \n  MM    M  `MN. M   `YMMNq.      MM     ,M  `MM      MMmmdM9      ,M  `MM   MM.  M' MM.  M'   \n  MM    M   `MM.M .     `MM      MM     AbmmmqMA     MM  YM.      AbmmmqMA  `MM A'  `MM A'    \n  MM    M     YMM Mb     dM      MM    A'     VML    MM   `Mb.   A'     VML  :MM;    :MM;     \n.JMML..JML.    YM P\"Ybmmd\"     .JMML..AMA.   .AMMA..JMML. .JMM..AMA.   .AMMA. VF      VF      \n                                                                                              \n                                                                                              "
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    }
+  ],
+  "links": [
+    [
+      18,
+      21,
+      0,
+      20,
+      3,
+      "BOOLEAN"
+    ],
+    [
+      63,
+      31,
+      0,
+      43,
+      4,
+      "IMAGE"
+    ],
+    [
+      65,
+      32,
+      0,
+      43,
+      5,
+      "STRING"
+    ],
+    [
+      66,
+      26,
+      0,
+      43,
+      6,
+      "STRING"
+    ],
+    [
+      75,
+      20,
+      0,
+      43,
+      0,
+      "IMAGE"
+    ],
+    [
+      102,
+      57,
+      0,
+      56,
+      0,
+      "STRING"
+    ],
+    [
+      103,
+      58,
+      0,
+      56,
+      1,
+      "STRING"
+    ],
+    [
+      152,
+      21,
+      0,
+      65,
+      3,
+      "BOOLEAN"
+    ],
+    [
+      153,
+      21,
+      0,
+      66,
+      3,
+      "BOOLEAN"
+    ],
+    [
+      157,
+      20,
+      0,
+      70,
+      0,
+      "IMAGE"
+    ],
+    [
+      158,
+      65,
+      0,
+      71,
+      0,
+      "IMAGE"
+    ],
+    [
+      159,
+      66,
+      0,
+      72,
+      0,
+      "IMAGE"
+    ],
+    [
+      179,
+      65,
+      0,
+      43,
+      1,
+      "IMAGE"
+    ],
+    [
+      180,
+      66,
+      0,
+      43,
+      2,
+      "IMAGE"
+    ],
+    [
+      228,
+      56,
+      1,
+      79,
+      0,
+      "STRING"
+    ],
+    [
+      229,
+      56,
+      0,
+      79,
+      1,
+      "STRING"
+    ],
+    [
+      230,
+      55,
+      0,
+      79,
+      2,
+      "STRING"
+    ],
+    [
+      231,
+      43,
+      0,
+      79,
+      3,
+      "STRING"
+    ],
+    [
+      232,
+      43,
+      1,
+      79,
+      5,
+      "STRING"
+    ],
+    [
+      233,
+      59,
+      0,
+      79,
+      4,
+      "STRING"
+    ],
+    [
+      234,
+      43,
+      2,
+      79,
+      6,
+      "INT"
+    ],
+    [
+      235,
+      59,
+      2,
+      79,
+      7,
+      "INT"
+    ],
+    [
+      236,
+      59,
+      3,
+      79,
+      8,
+      "INT"
+    ],
+    [
+      237,
+      59,
+      1,
+      79,
+      9,
+      "STRING"
+    ],
+    [
+      238,
+      70,
+      0,
+      79,
+      10,
+      "IMAGE"
+    ],
+    [
+      239,
+      71,
+      0,
+      79,
+      11,
+      "IMAGE"
+    ],
+    [
+      240,
+      72,
+      0,
+      79,
+      12,
+      "IMAGE"
+    ],
+    [
+      241,
+      21,
+      0,
+      79,
+      14,
+      "BOOLEAN"
+    ],
+    [
+      242,
+      79,
+      0,
+      61,
+      0,
+      "IMAGE"
+    ],
+    [
+      244,
+      59,
+      2,
+      20,
+      0,
+      "INT"
+    ],
+    [
+      245,
+      59,
+      2,
+      65,
+      0,
+      "INT"
+    ],
+    [
+      246,
+      59,
+      2,
+      66,
+      0,
+      "INT"
+    ],
+    [
+      247,
+      59,
+      3,
+      20,
+      1,
+      "INT"
+    ],
+    [
+      248,
+      59,
+      3,
+      65,
+      1,
+      "INT"
+    ],
+    [
+      249,
+      59,
+      3,
+      66,
+      1,
+      "INT"
+    ],
+    [
+      250,
+      59,
+      4,
+      43,
+      7,
+      "STRING"
+    ],
+    [
+      251,
+      59,
+      4,
+      20,
+      2,
+      "STRING"
+    ],
+    [
+      252,
+      59,
+      4,
+      65,
+      2,
+      "STRING"
+    ],
+    [
+      253,
+      59,
+      4,
+      66,
+      2,
+      "STRING"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "image 1",
+      "bounding": [
+        -9.90499433553759,
+        -1412.1306243436431,
+        188.7739918777366,
+        80
+      ],
+      "color": "#88A",
+      "font_size": 42,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "image 2",
+      "bounding": [
+        883.5691979667291,
+        -1414.676974884275,
+        188.7739918777366,
+        80
+      ],
+      "color": "#88A",
+      "font_size": 42,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "image 3",
+      "bounding": [
+        1778.9856890657302,
+        -1417.0508221756954,
+        188.7739918777366,
+        80
+      ],
+      "color": "#88A",
+      "font_size": 42,
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "RPG",
+      "bounding": [
+        2685.4411964275723,
+        -1411.4204005577583,
+        140,
+        80
+      ],
+      "color": "#88A",
+      "font_size": 42,
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "Preview",
+      "bounding": [
+        6785.332739792294,
+        -1416.377069846592,
+        187.13891196947134,
+        80
+      ],
+      "color": "#88A",
+      "font_size": 42,
+      "flags": {}
+    },
+    {
+      "id": 7,
+      "title": "API Settings",
+      "bounding": [
+        -1384.8128176794244,
+        -1406.945359654489,
+        973.7848769957457,
+        507.7462737351575
+      ],
+      "color": "#88A",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 9,
+      "title": "Workflow Settings",
+      "bounding": [
+        -359.5120112472002,
+        -1405.622103258484,
+        290,
+        461.7184788586825
+      ],
+      "color": "#88A",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 10,
+      "title": "BIG",
+      "bounding": [
+        5804.696168323741,
+        -1419.9694450525317,
+        140,
+        80
+      ],
+      "color": "#88A",
+      "font_size": 42,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8140274938683988,
+      "offset": [
+        1920.8765505196411,
+        2216.8992941207207
+      ]
+    },
+    "frontendVersion": "1.41.21",
+    "reroutes": [
+      {
+        "id": 1,
+        "pos": [
+          2640.0319756146023,
+          -735.4451263845019
+        ],
+        "linkIds": [
+          63
+        ]
+      },
+      {
+        "id": 2,
+        "parentId": 1,
+        "pos": [
+          2646.79727620022,
+          -1235.7632733027262
+        ],
+        "linkIds": [
+          63
+        ]
+      }
+    ],
+    "instara_id": "01KCN5H3M914WVNPN9KGF5MF2M",
+    "linkExtensions": [
+      {
+        "id": 63,
+        "parentId": 2
+      }
+    ],
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}

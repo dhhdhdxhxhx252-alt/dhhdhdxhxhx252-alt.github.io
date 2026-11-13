@@ -1,0 +1,1061 @@
+{
+  "id": "0f9a9252-f94d-4786-a50d-a21ff8b62764",
+  "revision": 0,
+  "last_node_id": 80,
+  "last_link_id": 156,
+  "nodes": [
+    {
+      "id": 44,
+      "type": "INSTARAW_PromptBatchPreview",
+      "pos": [
+        5334.118536421539,
+        -1019.5701177182973
+      ],
+      "size": [
+        285.29999389648435,
+        66
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt_list_positive",
+          "type": "STRING",
+          "link": 68
+        },
+        {
+          "name": "prompt_list_negative",
+          "type": "STRING",
+          "link": 69
+        },
+        {
+          "name": "seed_list",
+          "type": "INT",
+          "link": 70
+        }
+      ],
+      "outputs": [
+        {
+          "name": "summary",
+          "type": "STRING",
+          "links": [
+            71
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "INSTARAW_PromptBatchPreview",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 78,
+      "type": "INSTARAW_ImageListFromBatch",
+      "pos": [
+        5352.932615508138,
+        -1216.057411674228
+      ],
+      "size": [
+        286.4500030517578,
+        26
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 155
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "shape": 6,
+          "type": "IMAGE",
+          "links": [
+            156
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "INSTARAW_ImageListFromBatch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 77,
+      "type": "PrimitiveInt",
+      "pos": [
+        1890.9336911723244,
+        -29.982255129783994
+      ],
+      "size": [
+        390.21036814425224,
+        82
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            154
+          ]
+        }
+      ],
+      "title": "Custom HEIGHT",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.66",
+        "Node name for S&R": "PrimitiveInt",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        1200,
+        "fixed"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 14,
+      "type": "INSTARAW_WANAspectRatio",
+      "pos": [
+        1888.6469742548888,
+        -333.32245732356125
+      ],
+      "size": [
+        392.0935183442043,
+        130.61404929199398
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": []
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": []
+        },
+        {
+          "name": "aspect_label",
+          "type": "STRING",
+          "links": [
+            64,
+            78
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "INSTARAW_WANAspectRatio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "3:4 (Portrait)"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 21,
+      "type": "PrimitiveBoolean",
+      "pos": [
+        1883.0217757776934,
+        -453.43785697151117
+      ],
+      "size": [
+        392.9298781005932,
+        78.90669705943128
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "links": [
+            18
+          ]
+        }
+      ],
+      "title": "ENABLE IMG TO IMG?",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.66",
+        "Node name for S&R": "PrimitiveBoolean",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        true
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 31,
+      "type": "LoadImage",
+      "pos": [
+        1886.9518641367204,
+        -985.8533550577638
+      ],
+      "size": [
+        393.2643194105076,
+        492.0893528771943
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            63
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "title": "CHARACTER REF",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.66",
+        "Node name for S&R": "LoadImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "teXj6mbE7nUCnUOWRcR2_.png",
+        "image"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 70,
+      "type": "SaveImageKJ",
+      "pos": [
+        5332.90757975375,
+        -1230.3113579552187
+      ],
+      "size": [
+        739.5835825253926,
+        158.4827782862326
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 156
+        },
+        {
+          "name": "caption",
+          "shape": 7,
+          "type": "STRING",
+          "link": 149
+        }
+      ],
+      "outputs": [
+        {
+          "name": "filename",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "1.1.3",
+        "Node name for S&R": "SaveImageKJ",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {
+            "filename_prefix": true,
+            "output_folder": true,
+            "caption_file_extension": true
+          }
+        }
+      },
+      "widgets_values": [
+        "CharacterName",
+        "Output",
+        ".txt"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 76,
+      "type": "PrimitiveInt",
+      "pos": [
+        1891.8195835758047,
+        -155.14487225753453
+      ],
+      "size": [
+        389.0973771156814,
+        82
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            153
+          ]
+        }
+      ],
+      "title": "Custom WIDTH",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.66",
+        "Node name for S&R": "PrimitiveInt",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        896,
+        "fixed"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 39,
+      "type": "PreviewAny",
+      "pos": [
+        5328.693858417817,
+        -1025.5995559794233
+      ],
+      "size": [
+        737.5369873818436,
+        1706.8842478514434
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 71
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.66",
+        "Node name for S&R": "PreviewAny",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 20,
+      "type": "INSTARAW_AdvancedImageLoader",
+      "pos": [
+        1038.0782056306923,
+        -1225.4127512956102
+      ],
+      "size": [
+        840.6692851005238,
+        603
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 153
+        },
+        {
+          "name": "height",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 154
+        },
+        {
+          "name": "aspect_label",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "aspect_label"
+          },
+          "link": 78
+        },
+        {
+          "name": "enable_img2img",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_img2img"
+          },
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            75,
+            155
+          ]
+        },
+        {
+          "name": "index",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "total",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "info",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "INSTARAW_AdvancedImageLoader",
+        "batch_data": "{\"images\":[],\"order\":[],\"total_count\":0}",
+        "txt2img_data_backup": "{\"images\":[{\"id\":\"0891ddd8-f4eb-40eb-bcaf-915958d4e925\",\"filename\":\"0891ddd8-f4eb-40eb-bcaf-915958d4e925.png\",\"original_name\":\"ASS.png\",\"width\":1440,\"height\":1920,\"thumbnail\":\"thumb_0891ddd8-f4eb-40eb-bcaf-915958d4e925.png\",\"repeat_count\":3}],\"order\":[\"0891ddd8-f4eb-40eb-bcaf-915958d4e925\"],\"total_count\":3}",
+        "img2img_data_backup": "{\"images\":[{\"id\":\"0891ddd8-f4eb-40eb-bcaf-915958d4e925\",\"filename\":\"0891ddd8-f4eb-40eb-bcaf-915958d4e925.png\",\"original_name\":\"ASS.png\",\"width\":1440,\"height\":1920,\"thumbnail\":\"thumb_0891ddd8-f4eb-40eb-bcaf-915958d4e925.png\",\"repeat_count\":3}],\"order\":[\"0891ddd8-f4eb-40eb-bcaf-915958d4e925\"],\"total_count\":3}",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "width": true,
+            "height": true,
+            "aspect_label": true,
+            "enable_img2img": true
+          },
+          "version": "7.5.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "Batch Tensor",
+        "Center Crop",
+        0,
+        512,
+        512,
+        true,
+        "{\"latents\":[],\"order\":[],\"total_count\":0}",
+        "{\"images\":[],\"order\":[],\"total_count\":0}",
+        "{\"images\":[],\"order\":[],\"total_count\":0}"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 32,
+      "type": "easy string",
+      "pos": [
+        1896.474837011628,
+        -1223.5011970685052
+      ],
+      "size": [
+        383.33340882459197,
+        58
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "string",
+          "type": "STRING",
+          "links": [
+            65
+          ]
+        }
+      ],
+      "title": "GEMINI API KEY",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.4",
+        "Node name for S&R": "easy string",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 26,
+      "type": "easy string",
+      "pos": [
+        1897.4348580866438,
+        -1114.953510639759
+      ],
+      "size": [
+        380.2924486271613,
+        73.43063483839876
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "string",
+          "type": "STRING",
+          "links": [
+            66
+          ]
+        }
+      ],
+      "title": "XAI API KEY",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.4",
+        "Node name for S&R": "easy string",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 43,
+      "type": "INSTARAW_RealityPromptGenerator",
+      "pos": [
+        2295.7868880373167,
+        -1237.498003139397
+      ],
+      "size": [
+        3009.4243756622855,
+        2149
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 75
+        },
+        {
+          "name": "images2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "images3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "images4",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "character_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 63
+        },
+        {
+          "name": "gemini_api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "gemini_api_key"
+          },
+          "link": 65
+        },
+        {
+          "name": "grok_api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "grok_api_key"
+          },
+          "link": 66
+        },
+        {
+          "name": "aspect_label",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "aspect_label"
+          },
+          "link": 64
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt_list_positive",
+          "shape": 6,
+          "type": "STRING",
+          "links": [
+            68,
+            149
+          ]
+        },
+        {
+          "name": "prompt_list_negative",
+          "shape": 6,
+          "type": "STRING",
+          "links": [
+            69
+          ]
+        },
+        {
+          "name": "seed_list",
+          "shape": 6,
+          "type": "INT",
+          "links": [
+            70
+          ]
+        },
+        {
+          "name": "generation_count",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "resolved_mode",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "INSTARAW_RealityPromptGenerator",
+        "prompt_batch_data": "[]",
+        "prompts_db_cache": null,
+        "bookmarks": "[]",
+        "active_tab": "generate",
+        "library_filters": "{\"tags\":[],\"content_type\":\"any\",\"safety_level\":\"any\",\"shot_type\":\"portrait\",\"quality\":\"any\",\"search_query\":\"\",\"show_bookmarked\":false,\"sdxl_mode\":false}",
+        "creative_system_prompt": "",
+        "creative_temperature": 0.9,
+        "creative_top_p": 0.9,
+        "generation_style": "reality",
+        "enable_library_inspiration": true,
+        "enable_expressions": true,
+        "enabled_expressions": "[\"Neutral/Natural\",\"Smiling/Happy\",\"Laughing/Joyful\",\"Sexy/Seductive\",\"Flirty/Playful\",\"Blowing a Kiss\",\"Winking\",\"Pouty/Duck Face\",\"Surprised/Excited\",\"Confident/Fierce\",\"Shy/Cute\",\"Ahegao/Pleasure\",\"Biting Lip\",\"Tongue Out\",\"Sultry/Smoldering\"]",
+        "default_expression": "Neutral/Natural",
+        "default_mix_frequency": 0,
+        "current_expression_index": 5,
+        "custom_template": "{USER_INPUT}",
+        "show_system_prompt_preview": false,
+        "creative_model": "grok-4-fast-reasoning",
+        "prompt_queue_data": "[{\"id\":\"01KAVMZ44BSP4PQTTTYQP8KV5G\",\"positive_prompt\":\"photorealistic high-resolution professional photograph of a walk-in closet interior with hanging clothes on racks, wooden shelves, a window allowing natural sunlight, LED strip lights along the walls, scattered items on the beige carpeted floor including multiple pairs of colorful sneakers like white and green Nike shoes, cardboard shoe boxes, a large black Louis Vuitton handbag, crumpled papers, and a green gift box; in the scene, a middle-aged man with short dark hair wearing a long brown fur coat, gold chains, sunglasses, and an open-collared shirt stands holding up a pair of oversized gray pants; next to him kneeling on the floor is a bald middle-aged man in a black long-sleeve shirt, layered necklaces, and blue jeans, reaching out to touch the pants leg while surrounded by the scattered shoes; a young girl around 10 years old with long dark hair wearing a sparkling gold sleeveless dress, a jeweled crown, gold necklace, and barefoot stands with one leg extended playfully, smiling excitedly while holding a black handbag; behind them standing and smiling is an elderly man with blonde combed-back hair in a dark blue suit jacket, white shirt, red tie, and gray pants; the group appears in a joyful, candid moment, sharp focus, natural indoor lighting with soft shadows, high detail on fabrics, textures, and expressions\",\"negative_prompt\":\"unrealistic, illustration, painting, drawing, art, artistic, low quality, deformed, bad anatomy, blurry, amateur, overexposed, underexposed, cartoon, sketch, abstract\",\"repeat_count\":1,\"tags\":[\"closet interior\",\"group portrait\",\"photorealistic\",\"indoor photography\",\"candid moment\",\"natural lighting\"],\"source_id\":\"gen_1764004897849_599f9l76p\",\"seed\":1111111,\"seed_control\":\"randomize\"},{\"id\":\"01KAVMZ98CSP9MB9GEDBX3HF4R\",\"positive_prompt\":\"photorealistic high-resolution professional photography of a group of people floating on a large pink inflatable flamingo pool float in a clear blue swimming pool, sunny outdoor poolside setting with tiled deck and palm tree in background, detailed water reflections and ripples, the group includes a blonde woman with long wavy hair, oversized black sunglasses, full lips, wearing a white bikini top and tiara, making a peace sign with her hand, an elderly man with orange-tinted skin, white combed-over hair, grinning widely while holding a drink, a man with short dark hair, black sunglasses, shirtless holding a smartphone taking a selfie, a bald muscular man with tattoos on his arm, flexing his bicep shirtless, and a small red-haired boy in blue swim shorts sitting on the float, everyone smiling and relaxed, holding champagne bottles and plastic cups with beverages, gold chain necklaces on some, natural sunlight, sharp focus, high detail on skin textures, fabrics, and float material\",\"negative_prompt\":\"unrealistic, illustration, painting, drawing, art, artistic, low quality, deformed, bad anatomy, blurry, amateur, cartoon, anime, abstract, overexposed, underexposed, grainy\",\"repeat_count\":1,\"tags\":[\"pool party\",\"celebrity group\",\"photorealistic\",\"outdoor pool\",\"summer vibe\",\"selfie pose\"],\"source_id\":\"gen_1764004896939_xmg5edtrp\",\"seed\":1111111,\"seed_control\":\"randomize\"},{\"id\":\"01KAVN0DGM24DSXCSEWBZP75Z3\",\"positive_prompt\":\"photorealistic high-resolution professional photography of a crowded interior of a blue-lit commercial walk-in freezer with metallic walls and shelves stocked with food items including cakes on plates, stainless steel pots, and dairy products, natural blue ambient lighting from overhead fixtures creating a cool atmosphere, sharp focus and detailed textures on all surfaces, in the foreground standing confidently former President Donald Trump dressed in a dark blue suit with red tie smiling broadly while holding a whole roasted chicken in his right hand, next to him Elon Musk in a black t-shirt grinning and holding a yellow slice of cheese to his mouth, to the right a young blonde woman in a sparkling pink evening dress laughing joyfully while squatting and holding a large glass jar of pickles with both hands, her long blonde hair flowing, in the background a muscular man with tattoos wearing a black Balenciaga hoodie and gold chains leaning against the shelf holding a drink, another figure partially visible, everyone posed dynamically with food and drinks, high detail on clothing fabrics, skin textures, metallic reflections, and food items, masterpiece best quality\",\"negative_prompt\":\"unrealistic, illustration, painting, drawing, art, artistic, low quality, deformed, bad anatomy, blurry, amateur, overexposed, underexposed, cartoon, sketch, abstract\",\"repeat_count\":1,\"tags\":[\"photorealistic\",\"group portrait\",\"indoor freezer\",\"blue lighting\",\"celebrities\",\"food holding\",\"detailed textures\"],\"source_id\":\"gen_1764004893387_i105mnuim\",\"seed\":1111111,\"seed_control\":\"randomize\"},{\"id\":\"01KAVNQMZAHW4BRK7N41N6SA67\",\"positive_prompt\":\"photorealistic high-resolution professional photography of a group of people floating on a large pink inflatable flamingo pool float in a clear blue swimming pool, sunny outdoor poolside setting with tiled deck and palm tree in background, detailed water reflections and ripples, the group includes a blonde woman with long wavy hair, oversized black sunglasses, full lips, wearing a white bikini top and tiara, making a peace sign with her hand, an elderly man with orange-tinted skin, white combed-over hair, grinning widely while holding a drink, a man with short dark hair, black sunglasses, shirtless holding a smartphone taking a selfie, a bald muscular man with tattoos on his arm, flexing his bicep shirtless, and a small red-haired boy in blue swim shorts sitting on the float, everyone smiling and relaxed, holding champagne bottles and plastic cups with beverages, gold chain necklaces on some, natural sunlight, sharp focus, high detail on skin textures, fabrics, and float material\",\"negative_prompt\":\"unrealistic, illustration, painting, drawing, art, artistic, low quality, deformed, bad anatomy, blurry, amateur, cartoon, anime, abstract, overexposed, underexposed, grainy\",\"repeat_count\":1,\"tags\":[\"pool party\",\"celebrity group\",\"photorealistic\",\"outdoor pool\",\"summer vibe\",\"selfie pose\"],\"source_id\":\"gen_1764004896939_xmg5edtrp\",\"seed\":1111111,\"seed_control\":\"randomize\"},{\"id\":\"01KAVNQPE7XZPQ80NE7ZF40H5D\",\"positive_prompt\":\"photorealistic high-resolution photograph of a luxurious home theater room with dim red and blue ambient lighting from ceiling panels and wall sconces, large flat-screen TV mounted on the wall displaying a intense boxing match with two muscular fighters in action inside a ring, polished wooden bar counter in the background stocked with various bottles of liquor including whiskey and vodka, four brown leather recliner chairs arranged in a row facing the screen, in the left chair a middle-aged man with short dark hair wearing a black hoodie and jeans, gold chain necklace, holding a glass of amber liquid and gesturing with his hand, in the center chair former President Donald Trump mid-70s with blonde combed-back hair, wearing a dark blue suit jacket, white dress shirt, red tie, looking animated and shouting into a cell phone held to his ear, legs crossed casually, in the right chair Elon Musk mid-50s with short dark hair, wearing a black t-shirt and jeans, sitting relaxed with hands in lap watching the screen intently, in the far right chair a young blonde woman with long wavy hair asleep leaning back, covered by a white blanket with 'Moncler' logo partially visible, open white double doors in the foreground revealing the room from a hallway, sharp focus, professional photography, natural indoor lighting, detailed textures on leather seats and wooden elements\",\"negative_prompt\":\"unrealistic, illustration, painting, drawing, art, artistic, low quality, deformed, bad anatomy, blurry, amateur, overexposed, underexposed, cartoon, sketch\",\"repeat_count\":1,\"tags\":[\"home theater\",\"indoor\",\"celebrities\",\"donald trump\",\"elon musk\",\"boxing match on tv\",\"leather recliners\",\"ambient lighting\"],\"source_id\":\"gen_1764004896818_88vvavctc\",\"seed\":1111111,\"seed_control\":\"randomize\"},{\"id\":\"01KAVNQQKZW4PG79HA09F60PM5\",\"positive_prompt\":\"photorealistic high-resolution professional photograph of a walk-in closet interior with hanging clothes on racks, wooden shelves, a window allowing natural sunlight, LED strip lights along the walls, scattered items on the beige carpeted floor including multiple pairs of colorful sneakers like white and green Nike shoes, cardboard shoe boxes, a large black Louis Vuitton handbag, crumpled papers, and a green gift box; in the scene, a middle-aged man with short dark hair wearing a long brown fur coat, gold chains, sunglasses, and an open-collared shirt stands holding up a pair of oversized gray pants; next to him kneeling on the floor is a bald middle-aged man in a black long-sleeve shirt, layered necklaces, and blue jeans, reaching out to touch the pants leg while surrounded by the scattered shoes; a young girl around 10 years old with long dark hair wearing a sparkling gold sleeveless dress, a jeweled crown, gold necklace, and barefoot stands with one leg extended playfully, smiling excitedly while holding a black handbag; behind them standing and smiling is an elderly man with blonde combed-back hair in a dark blue suit jacket, white shirt, red tie, and gray pants; the group appears in a joyful, candid moment, sharp focus, natural indoor lighting with soft shadows, high detail on fabrics, textures, and expressions\",\"negative_prompt\":\"unrealistic, illustration, painting, drawing, art, artistic, low quality, deformed, bad anatomy, blurry, amateur, overexposed, underexposed, cartoon, sketch, abstract\",\"repeat_count\":1,\"tags\":[\"closet interior\",\"group portrait\",\"photorealistic\",\"indoor photography\",\"candid moment\",\"natural lighting\"],\"source_id\":\"gen_1764004897849_599f9l76p\",\"seed\":1111111,\"seed_control\":\"randomize\"}]",
+        "use_character_likeness": false,
+        "inspiration_count": 10,
+        "character_text_input": "",
+        "generation_count": 2,
+        "character_complexity": "concise",
+        "user_text_input": "",
+        "variable_help_expanded": false,
+        "show_custom_template_preview": true,
+        "custom_library_expanded": true,
+        "is_sdxl": false,
+        "img2img_preset": "none",
+        "img2img_custom_instructions": "",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "gemini_api_key": true,
+            "grok_api_key": true,
+            "aspect_label": true
+          },
+          "version": "7.5.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "",
+        "",
+        "",
+        "[]",
+        "[]",
+        false
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 74,
+      "type": "Note",
+      "pos": [
+        1020.2323498287981,
+        -1478.0400055638277
+      ],
+      "size": [
+        547.692915292442,
+        168.95542199270744
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "                                                                                              \n                                                                                              \n`7MMF'`7MN.   `7MF'.M\"\"\"bgd MMP\"\"MM\"\"YMM   db      `7MM\"\"\"Mq.        db `7MMF'     A     `7MF'\n  MM    MMN.    M ,MI    \"Y P'   MM   `7  ;MM:       MM   `MM.      ;MM:  `MA     ,MA     ,V  \n  MM    M YMb   M `MMb.          MM      ,V^MM.      MM   ,M9      ,V^MM.  VM:   ,VVM:   ,V   \n  MM    M  `MN. M   `YMMNq.      MM     ,M  `MM      MMmmdM9      ,M  `MM   MM.  M' MM.  M' \n  MM    M   `MM.M .     `MM      MM     AbmmmqMA     MM  YM.      AbmmmqMA  `MM A'  `MM A'    \n  MM    M     YMM Mb     dM      MM    A'     VML    MM   `Mb.   A'     VML  :MM;    :MM;     \n.JMML..JML.    YM P\"Ybmmd\"     .JMML..AMA.   .AMMA..JMML. .JMM..AMA.   .AMMA. VF      VF      \n                                                                                              "
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 79,
+      "type": "Label (rgthree)",
+      "pos": [
+        1826.3187851690764,
+        -1502.7603210303039
+      ],
+      "size": [
+        1429.88330078125,
+        180
+      ],
+      "flags": {
+        "allow_interaction": true
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "[AI Syndicate]",
+      "properties": {
+        "fontSize": 180,
+        "fontFamily": "serif",
+        "fontColor": "#ffffff",
+        "textAlign": "left",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0,
+        "angle": 0
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 80,
+      "type": "Label (rgthree)",
+      "pos": [
+        3445.6831864124138,
+        -1497.0289452077238
+      ],
+      "size": [
+        2145.60009765625,
+        180
+      ],
+      "flags": {
+        "allow_interaction": true
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "https://t.me/+l1nCXAoNBudhZjZi",
+      "properties": {
+        "fontSize": 180,
+        "fontFamily": "serif",
+        "fontColor": "#ffffff",
+        "textAlign": "left",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0,
+        "angle": 0
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 75,
+      "type": "INSTARAW_BrandingNode",
+      "pos": [
+        1578.1870740298225,
+        -1475.7904397099358
+      ],
+      "size": [
+        223.49105946080513,
+        162.0140888153171
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "INSTARAW_BrandingNode",
+        "logo_url": "https://instara.s3.us-east-1.amazonaws.com/INSTARAW_logomark_only.svg",
+        "width": 120,
+        "height": 105,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.1"
+        }
+      },
+      "widgets_values": [],
+      "bgcolor": "transparent",
+      "boxcolor": "transparent"
+    }
+  ],
+  "links": [
+    [
+      18,
+      21,
+      0,
+      20,
+      3,
+      "BOOLEAN"
+    ],
+    [
+      63,
+      31,
+      0,
+      43,
+      4,
+      "IMAGE"
+    ],
+    [
+      64,
+      14,
+      2,
+      43,
+      7,
+      "STRING"
+    ],
+    [
+      65,
+      32,
+      0,
+      43,
+      5,
+      "STRING"
+    ],
+    [
+      66,
+      26,
+      0,
+      43,
+      6,
+      "STRING"
+    ],
+    [
+      68,
+      43,
+      0,
+      44,
+      0,
+      "STRING"
+    ],
+    [
+      69,
+      43,
+      1,
+      44,
+      1,
+      "STRING"
+    ],
+    [
+      70,
+      43,
+      2,
+      44,
+      2,
+      "INT"
+    ],
+    [
+      71,
+      44,
+      0,
+      39,
+      0,
+      "*"
+    ],
+    [
+      75,
+      20,
+      0,
+      43,
+      0,
+      "IMAGE"
+    ],
+    [
+      78,
+      14,
+      2,
+      20,
+      2,
+      "STRING"
+    ],
+    [
+      149,
+      43,
+      0,
+      70,
+      1,
+      "STRING"
+    ],
+    [
+      153,
+      76,
+      0,
+      20,
+      0,
+      "INT"
+    ],
+    [
+      154,
+      77,
+      0,
+      20,
+      1,
+      "INT"
+    ],
+    [
+      155,
+      20,
+      0,
+      78,
+      0,
+      "IMAGE"
+    ],
+    [
+      156,
+      78,
+      0,
+      70,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "Caption Creation",
+      "bounding": [
+        1021.5919581042182,
+        -1303.301435026185,
+        5060.1577365663,
+        2474.412230965261
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.25401326852420264,
+      "offset": [
+        1179.4474600521846,
+        3117.188189854167
+      ]
+    },
+    "frontendVersion": "1.41.21",
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true,
+    "workflowRendererVersion": "LG",
+    "instara_id": "01KCN5H3M914WVNPN9KGF5MF2M"
+  },
+  "version": 0.4
+}
