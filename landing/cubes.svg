@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="760" viewBox="0 0 420 380">
+  <defs>
+    <radialGradient id="cubeShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#a8a294" stop-opacity=".24"/>
+      <stop offset="1" stop-color="#a8a294" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <ellipse cx="222" cy="334" rx="178" ry="36" fill="url(#cubeShadow)"/>
+  <g opacity="1">
+      <polygon points="110,190.1 48,156 48,216 110,250.1" fill="rgb(229,226,218)" stroke="#b6b1a4" stroke-width="1.25" stroke-linejoin="round"/>
+      <polygon points="110,190.1 172,156 172,216 110,250.1" fill="rgb(236,233,226)" stroke="#b6b1a4" stroke-width="1.25" stroke-linejoin="round"/>
+      <polygon points="110,121.9 172,156 110,190.1 48,156" fill="rgb(250,249,246)" stroke="#a9a498" stroke-width="1.25" stroke-linejoin="round"/>
+    </g>
+  <g opacity="1">
+      <polygon points="270,248.9 192,206 192,278 270,320.9" fill="rgb(234,231,224)" stroke="#b6b1a4" stroke-width="1.25" stroke-linejoin="round"/>
+      <polygon points="270,248.9 348,206 348,278 270,320.9" fill="rgb(240,237,231)" stroke="#b6b1a4" stroke-width="1.25" stroke-linejoin="round"/>
+      <polygon points="270,163.1 348,206 270,248.9 192,206" fill="rgb(252,252,250)" stroke="#a9a498" stroke-width="1.25" stroke-linejoin="round"/>
+    </g>
+  <g opacity="1">
+      <polygon points="210,341.5 120,292 120,376 210,425.5" fill="rgb(237,235,229)" stroke="#b6b1a4" stroke-width="1.25" stroke-linejoin="round"/>
+      <polygon points="210,341.5 300,292 300,376 210,425.5" fill="rgb(243,241,235)" stroke="#b6b1a4" stroke-width="1.25" stroke-linejoin="round"/>
+      <polygon points="210,242.5 300,292 210,341.5 120,292" fill="rgb(254,254,254)" stroke="#a9a498" stroke-width="1.25" stroke-linejoin="round"/>
+    </g>
+  <g stroke="#c3beb2" stroke-width="1" fill="none" opacity=".5">
+    <path d="M 42 176 L 110 138 L 110 198"/>
+    <path d="M 348 176 L 392 154"/>
+  </g>
+</svg>

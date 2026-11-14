@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#15100f"/>
+      <stop offset=".45" stop-color="#3a2018"/>
+      <stop offset=".72" stop-color="#b06a35"/>
+      <stop offset=".88" stop-color="#e8a45c"/>
+      <stop offset="1" stop-color="#f2c084"/>
+    </linearGradient>
+    <radialGradient id="sun" cx=".62" cy=".78" r=".38">
+      <stop offset="0" stop-color="#ffd9a0" stop-opacity=".95"/>
+      <stop offset=".35" stop-color="#f2a45c" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#f2a45c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="d1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8a5427"/>
+      <stop offset="1" stop-color="#4a2c15"/>
+    </linearGradient>
+    <linearGradient id="d2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6b3f1e"/>
+      <stop offset="1" stop-color="#33200f"/>
+    </linearGradient>
+    <linearGradient id="d3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#54301a"/>
+      <stop offset="1" stop-color="#221408"/>
+    </linearGradient>
+    <linearGradient id="d4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#331d10"/>
+      <stop offset="1" stop-color="#150c06"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  1.2 0 0 0 -.28"/>
+    </filter>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <ellipse cx="1190" cy="830" rx="820" ry="420" fill="url(#sun)"/>
+  <circle cx="1190" cy="842" r="86" fill="#ffe2b0" opacity=".9"/>
+  <path d="M0,760 C300,640 520,700 780,650 C1040,600 1220,660 1440,610 C1650,565 1800,600 1920,580 L1920,1080 L0,1080 Z" fill="url(#d1)"/>
+  <path d="M0,830 C240,760 480,790 760,745 C1080,692 1340,760 1580,712 C1720,686 1840,700 1920,688 L1920,1080 L0,1080 Z" fill="url(#d2)"/>
+  <path d="M0,905 C260,845 560,880 860,835 C1160,790 1440,850 1700,808 C1800,792 1880,800 1920,795 L1920,1080 L0,1080 Z" fill="url(#d3)"/>
+  <path d="M0,1000 C320,955 640,975 980,940 C1300,908 1620,950 1920,915 L1920,1080 L0,1080 Z" fill="url(#d4)"/>
+  <rect width="1920" height="1080" filter="url(#grain)" opacity=".5"/>
+</svg>

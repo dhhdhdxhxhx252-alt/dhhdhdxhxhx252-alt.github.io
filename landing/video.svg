@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="860" viewBox="0 0 540 430">
+  <defs>
+    <radialGradient id="sphereFill" cx="32%" cy="25%" r="82%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".5" stop-color="#f4f2ec"/>
+      <stop offset=".85" stop-color="#e6e3db"/>
+      <stop offset="1" stop-color="#d2cec4"/>
+    </radialGradient>
+    <clipPath id="sphereClip"><circle cx="268" cy="178" r="92"/></clipPath>
+    <linearGradient id="saucerFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbfaf7"/>
+      <stop offset=".6" stop-color="#f0eee8"/>
+      <stop offset="1" stop-color="#dcd8ce"/>
+    </linearGradient>
+    <linearGradient id="saucerLip" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f7f6f2"/>
+      <stop offset="1" stop-color="#d5d0c5"/>
+    </linearGradient>
+    <radialGradient id="vidShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#a19b8d" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#a19b8d" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <ellipse cx="280" cy="352" rx="212" ry="48" fill="url(#vidShadow)"/>
+  <path d="M 96 378 L 97.47 382.5 L 101.86 383.97 L 109.09 389.71 L 119.04 394.69 L 131.54 395.27 L 146.38 397.98 L 163.29 403.36 L 182 404.51 L 202.18 403.92 L 223.48 407.26 L 245.55 409.41 L 268 406.96 L 290.45 406.55 L 312.52 408.56 L 333.82 406.19 L 354 402.18 L 372.71 402.15 L 389.62 400.86 L 404.46 395.17 L 416.96 391.85 L 426.91 391.09 L 434.14 386.18 L 438.53 380.12 L 440 378.4" fill="none" stroke="#b8b2a6" stroke-opacity="0.42" stroke-width="1.2"/>
+  <path d="M 130 388 L 131.18 391.43 L 134.7 395.56 L 140.5 395.64 L 148.49 398.42 L 158.52 403.65 L 170.42 404.59 L 183.99 404.45 L 199 408.41 L 215.19 410.82 L 232.28 409.01 L 249.99 409.78 L 268 412.67 L 286.01 411.07 L 303.72 408.42 L 320.81 409.8 L 337 409.46 L 352.01 405 L 365.58 403.29 L 377.48 403.7 L 387.51 399.71 L 395.5 395.01 L 401.3 394.56 L 404.82 392.51 L 406 386.71" fill="none" stroke="#b8b2a6" stroke-opacity="0.32" stroke-width="1.1"/>
+  <path d="M 172 397 L 172.82 399.41 L 175.27 399.34 L 179.31 403.61 L 184.86 406.58 L 191.84 405.53 L 200.12 407.29 L 209.56 411.37 L 220 411.12 L 231.26 409.99 L 243.15 413 L 255.47 414.41 L 268 411.75 L 280.53 411.89 L 292.85 414.15 L 304.74 411.99 L 316 409.07 L 326.44 410.3 L 335.88 409.83 L 344.16 405.45 L 351.14 404.07 L 356.69 404.84 L 360.73 401.29 L 363.18 397.31 L 364 397.66" fill="none" stroke="#b8b2a6" stroke-opacity="0.24" stroke-width="1"/>
+  <ellipse cx="268" cy="302" rx="172" ry="58" fill="url(#saucerFill)" stroke="#bdb8ac" stroke-opacity=".55" stroke-width="1.4"/>
+  <path d="M 96 302 A 172 58 0 0 0 440 302 L 440 314 A 172 58 0 0 1 96 314 Z" fill="url(#saucerLip)" stroke="#b3ada1" stroke-opacity=".55" stroke-width="1.2"/>
+  <ellipse cx="268" cy="294" rx="146" ry="45" fill="#f8f7f3" stroke="#c7c2b7" stroke-opacity=".8" stroke-width="1.2"/>
+  <ellipse cx="268" cy="292" rx="124" ry="35" fill="#e9e6dd"/>
+  <path d="M 112 306 A 158 50 0 0 0 424 306" fill="none" stroke="#ffffff" stroke-opacity=".9" stroke-width="1.6"/>
+  <ellipse cx="188" cy="322" rx="42" ry="8" fill="#ffffff" opacity=".25"/>
+  <circle cx="268" cy="178" r="92" fill="url(#sphereFill)"/>
+  <g clip-path="url(#sphereClip)"><ellipse cx="268" cy="178" rx="23" ry="92" fill="none" stroke="#a9a399" stroke-opacity=".5" stroke-width="1.1"/><ellipse cx="268" cy="178" rx="46" ry="92" fill="none" stroke="#a9a399" stroke-opacity=".5" stroke-width="1.1"/><ellipse cx="268" cy="178" rx="69" ry="92" fill="none" stroke="#a9a399" stroke-opacity=".5" stroke-width="1.1"/><ellipse cx="268" cy="178" rx="92" ry="25.76" fill="none" stroke="#a9a399" stroke-opacity=".42" stroke-width="1"/><ellipse cx="268" cy="178" rx="92" ry="51.52" fill="none" stroke="#a9a399" stroke-opacity=".42" stroke-width="1"/><ellipse cx="268" cy="178" rx="92" ry="73.6" fill="none" stroke="#a9a399" stroke-opacity=".42" stroke-width="1"/>
+    <ellipse cx="238" cy="140" rx="24" ry="14" fill="#ffffff" opacity=".5" transform="rotate(-28 238 140)"/>
+  </g>
+  <circle cx="268" cy="178" r="92" fill="none" stroke="#a8a297" stroke-opacity=".65" stroke-width="1.4"/>
+  <ellipse cx="268" cy="268" rx="57.04" ry="8" fill="#b7b1a5" opacity=".18"/>
+</svg>
