@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OFM — Console</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: 'Segoe UI', system-ui, sans-serif; background:#0a0a10; color:#e6e6f0; min-height:100vh; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 28px 20px 60px; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color:#8b8ba0; font-size: 13px; margin-bottom: 22px; }
+  .card { background:#12121a; border:1px solid #23233a; border-radius:14px; padding:18px; margin-bottom:16px; }
+  h2 { font-size: 15px; margin: 0 0 12px; }
+  .big { display:inline-block; background:#7c5cff; color:#fff; border-radius:10px; padding:12px 22px; font-size:15px; font-weight:600; text-decoration:none; }
+  .big:hover { background:#8f74ff; }
+  .ghost { display:inline-block; background:transparent; color:#a08bff; border:1px solid #4b3fa0; border-radius:10px; padding:11px 18px; font-size:14px; text-decoration:none; margin-left:10px; }
+  .st { font-size:12px; padding:3px 10px; border-radius:20px; background:#1d1d30; border:1px solid #34345a; }
+  .ok { border-color:#2c6e3f; color:#9fe8a8; }
+  .bad { border-color:#7e3030; color:#ff9d9d; }
+  .run { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid #1c1c2c; font-size:13px; }
+  .run:last-child { border-bottom:0; }
+  .run a { color:#e6e6f0; text-decoration:none; }
+  .run a:hover { color:#a08bff; }
+  table { width:100%; border-collapse: collapse; font-size:13px; }
+  td { padding:6px 4px; border-bottom:1px solid #1c1c2c; }
+  a { color:#a08bff; text-decoration:none; }
+  .muted { color:#8b8ba0; }
+  .top { display:flex; justify-content: space-between; align-items:center; margin-bottom:18px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <span class="st">OFM Trainer</span>
+    <a href="/gen/">→ Генератор</a>
+  </div>
+  <h1>Консоль</h1>
+  <div class="sub">Настоящий Linux-shell в браузере (GitHub Codespace) + живой статус всех прогонов пайплайна.</div>
+
+  <div class="card">
+    <h2>Реальная консоль <span class="st" id="csState">…</span></h2>
+    <div id="csInfo" class="muted" style="margin-bottom:12px; font-size:13px"></div>
+    <a class="big" id="csUrl" href="#" target="_blank" rel="noopener">Открыть консоль</a>
+    <a class="ghost" href="https://github.com/dhhdhdxhxhx252-alt/ofm-trainer" target="_blank">Репозиторий</a>
+  </div>
+
+  <div class="card">
+    <h2>Прогоны (Actions)</h2>
+    <table><tbody id="runs"></tbody></table>
+  </div>
+</div>
+<script>
+const REPO = 'dhhdhdxhxhx252-alt/ofm-trainer';
+let token = localStorage.getItem('ofm_token') || '';
+async function api(path) {
+  const r = await fetch('https://api.github.com' + path, {
+    headers: { 'Accept': 'application/vnd.github+json', 'Authorization': 'token ' + token }
+  });
+  if (!r.ok) throw new Error(r.status);
+  return r.json();
+}
+function stBadge(s, c) {
+  const el = document.createElement('span');
+  el.className = 'st ' + (c === 'success' ? 'ok' : (c === 'failure' ? 'bad' : ''));
+  el.textContent = c ? (s + ' · ' + c) : s;
+  return el;
+}
+async function refresh() {
+  try {
+    const cs = await api('/user/codespaces?per_page=50');
+    const mine = (cs.codespaces || []).find(c => c.repository && c.repository.full_name === REPO);
+    if (mine) {
+      document.getElementById('csState').textContent = mine.state === 'Ready' ? 'готова' : mine.state;
+      document.getElementById('csInfo').textContent = 'машинa: ' + (mine.machine ? mine.machine.display_name : 'default') + ' · код: ' + mine.name;
+      document.getElementById('csUrl').href = mine.web_url;
+    } else {
+      document.getElementById('csState').textContent = 'не найдена';
+      document.getElementById('csInfo').textContent = 'Codespace не найден — создай через Actions или попроси агента.';
+    }
+  } catch (e) { document.getElementById('csState').textContent = 'ошибка ' + e.message; }
+  try {
+    const rs = await api('/repos/' + REPO + '/actions/runs?per_page=8');
+    const tb = document.getElementById('runs'); tb.innerHTML = '';
+    for (const r of rs.workflow_runs) {
+      const tr = document.createElement('tr');
+      const tdd = document.createElement('td');
+      const a = document.createElement('a'); a.href = r.html_url; a.target = '_blank';
+      a.textContent = 'run #' + r.run_number + ' · ' + new Date(r.created_at).toLocaleString();
+      tdd.appendChild(a);
+      const tds = document.createElement('td'); tds.align = 'right';
+      tds.appendChild(stBadge(r.status, r.conclusion));
+      tr.appendChild(tdd); tr.appendChild(tds); tb.appendChild(tr);
+    }
+  } catch (e) {}
+}
+refresh();
+setInterval(refresh, 20000);
+</script>
+</body>
+</html>
