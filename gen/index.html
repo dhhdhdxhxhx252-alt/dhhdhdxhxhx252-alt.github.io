@@ -112,7 +112,7 @@ document.getElementById('go').onclick = async () => {
     const arts = await (await api('/repos/' + REPO + '/actions/runs/' + run.id + '/artifacts')).json();
     const art = (arts.artifacts || []).find(a => a.name === 'gen-output');
     if (!art) { L('артефакт gen-output не найден'); btn.disabled = false; return; }
-    const zr = await fetch(art.download_url, { headers: { 'Authorization': 'token ' + token } });
+    const zr = await fetch(art.archive_download_url, { headers: { 'Authorization': 'token ' + token } });
     const buf = await zr.arrayBuffer();
     const zip = await window.JSZip.loadAsync(buf);
     const names = Object.keys(zip.files).filter(n => n.endsWith('.png'));
