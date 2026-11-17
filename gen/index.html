@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OFM — Test Generator (txt2img)</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: 'Segoe UI', system-ui, sans-serif; background:#0a0a10; color:#e6e6f0; min-height:100vh; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 28px 20px 60px; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color:#8b8ba0; font-size: 13px; margin-bottom: 22px; }
+  .card { background:#12121a; border:1px solid #23233a; border-radius:14px; padding:18px; margin-bottom:16px; }
+  label { display:block; font-size:12px; color:#9d9db5; margin: 10px 0 4px; text-transform: uppercase; letter-spacing:.06em; }
+  textarea, input { width:100%; background:#0d0d14; border:1px solid #2a2a44; color:#e6e6f0; border-radius:8px; padding:10px 12px; font-size:14px; font-family: inherit; }
+  textarea { min-height:70px; resize: vertical; }
+  .row { display:flex; gap:12px; }
+  .row > div { flex:1; }
+  button { width:100%; margin-top:16px; background:#7c5cff; color:#fff; border:0; border-radius:10px; padding:12px; font-size:15px; font-weight:600; cursor:pointer; }
+  button:hover { background:#8f74ff; }
+  button:disabled { background:#3a3a55; cursor:wait; }
+  .log { font-family: ui-monospace, Consolas, monospace; font-size:12px; color:#9fe8a8; background:#0b0b12; border:1px solid #1e2a20; border-radius:8px; padding:10px 12px; max-height:180px; overflow:auto; white-space:pre-wrap; margin-top:12px; }
+  img { max-width:100%; border-radius:12px; border:1px solid #2a2a44; display:block; margin-top:12px; }
+  .meta { color:#8b8ba0; font-size:12px; margin-top:6px; }
+  a { color:#a08bff; text-decoration: none; }
+  .badge { display:inline-block; padding:2px 10px; border-radius:20px; font-size:12px; background:#1d1d30; border:1px solid #34345a; }
+  .top { display:flex; justify-content: space-between; align-items:center; margin-bottom:18px; }
+  .top a { font-size:13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <span class="badge">OFM Trainer</span>
+    <a href="/console/">→ Консоль</a>
+  </div>
+  <h1>Text → Image (тест модели)</h1>
+  <div class="sub">Реальная генерация SD 1.5 на GitHub Actions (CPU). Промпт уходит в репозиторий ofm-trainer, картинка возвращается в output/gen/. Время: ~8–15 мин.</div>
+
+  <div class="card">
+    <label>Промпт</label>
+    <textarea id="prompt">villa woman, realistic photo, natural lighting, high quality, detailed face</textarea>
+    <label>Негативный промпт</label>
+    <input id="negative" value="blurry, low quality, deformed, watermark">
+    <div class="row">
+      <div><label>Шаги</label><input id="steps" type="number" value="20" min="5" max="50"></div>
+      <div><label>Seed (-1 = случайный)</label><input id="seed" type="number" value="-1"></div>
+      <div><label>CFG</label><input id="guidance" type="number" value="7.0" step="0.5" min="1" max="15"></div>
+    </div>
+    <button id="go">Generate</button>
+    <div class="log" id="log">готов к запуску</div>
+  </div>
+
+  <div class="card" id="resultCard" style="display:none">
+    <h2 style="font-size:16px; margin:0 0 4px">Результат</h2>
+    <img id="img">
+    <div class="meta" id="imgMeta"></div>
+  </div>
+</div>
+<script>
+const REPO = 'dhhdhdxhxhx252-alt/ofm-trainer';
+const logEl = document.getElementById('log');
+let token = localStorage.getItem('ofm_token') || '';
+const L = (m) => { logEl.textContent += '\n' + m; logEl.scrollTop = 1e9; };
+
+async function api(path, opts = {}) {
+  const headers = Object.assign({ 'Accept': 'application/vnd.github+json' }, opts.headers || {});
+  if (token) headers['Authorization'] = 'token ' + token;
+  const r = await fetch('https://api.github.com' + path, Object.assign({}, opts, { headers }));
+  if (!r.ok) throw new Error(r.status + ' ' + (await r.text()).slice(0, 200));
+  return r;
+}
+
+document.getElementById('go').onclick = async () => {
+  const btn = document.getElementById('go');
+  btn.disabled = true;
+  logEl.textContent = 'старт...';
+  const cfg = {
+    prompt: document.getElementById('prompt').value,
+    negative: document.getElementById('negative').value,
+    gen_steps: parseInt(document.getElementById('steps').value) || 20,
+    guidance: parseFloat(document.getElementById('guidance').value) || 7,
+    seed: parseInt(document.getElementById('seed').value) || -1
+  };
+  try {
+    const t0 = Date.now();
+    await api('/repos/' + REPO + '/actions/workflows/ofm.yml/dispatches', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ref: 'main', inputs: { mode: 'gen', config: JSON.stringify(cfg) } })
+    });
+    L('dispatch ok — жду ран (~15 c)...');
+    let run = null;
+    for (let i = 0; i < 12; i++) {
+      await new Promise(s => setTimeout(s, 8000));
+      const rs = await (await api('/repos/' + REPO + '/actions/runs?per_page=5')).json();
+      const fresh = rs.workflow_runs.find(r => (Date.now() - new Date(r.created_at)) < 120000);
+      if (fresh) { run = fresh; break; }
+    }
+    if (!run) { L('не нашёл свежий ран — открой Actions руками'); btn.disabled = false; return; }
+    L('run #' + run.run_number + ': ' + run.html_url);
+    while (true) {
+      await new Promise(s => setTimeout(s, 20000));
+      const st = await (await api('/repos/' + REPO + '/actions/runs/' + run.id)).json();
+      const mins = Math.round((Date.now() - t0) / 60000);
+      if (st.status !== 'completed') { L('статус: ' + st.status + ' (' + mins + ' мин)'); continue; }
+      L('run завершён: ' + st.conclusion);
+      break;
+    }
+    if (run.conclusion === 'failure' || false) {}
+    const files = await (await api('/repos/' + REPO + '/contents/output/gen')).json();
+    const pngs = (Array.isArray(files) ? files : []).filter(f => f.name.endsWith('.png'));
+    if (!pngs.length) { L('в output/gen нет картинок'); btn.disabled = false; return; }
+    pngs.sort((a, b) => new Date(b.created_at || 0) - new Date(a.created_at || 0) || (b.size - a.size));
+    const f = pngs[pngs.length - 1];
+    L('скачиваю ' + f.name + ' (' + Math.round(f.size / 1024) + ' KB)...');
+    const blob = await (await api('/repos/' + REPO + '/contents/output/gen/' + f.name, { headers: { 'Accept': 'application/vnd.github.raw' } })).blob();
+    document.getElementById('img').src = URL.createObjectURL(blob);
+    let stateTxt = '';
+    try {
+      const s = await (await api('/repos/' + REPO + '/contents/output/gen_state.json')).json();
+      stateTxt = JSON.parse(atob(s.content.replace(/\s/g, '')));
+    } catch (e) {}
+    document.getElementById('resultCard').style.display = 'block';
+    document.getElementById('imgMeta').textContent = 'файл: ' + f.name + (stateTxt ? ' · seed ' + stateTxt.seed + ' · ' + stateTxt.seconds + ' c' : '') + ' · всего генераций: ' + pngs.length;
+    L('готово ✔');
+  } catch (e) {
+    L('ОШИБКА: ' + e.message);
+  }
+  btn.disabled = false;
+};
+</script>
+</body>
+</html>
