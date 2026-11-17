@@ -58,6 +58,7 @@
     <div class="meta" id="imgMeta"></div>
   </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 <script>
 const REPO = 'dhhdhdxhxhx252-alt/ofm-trainer';
 const logEl = document.getElementById('log');
@@ -90,7 +91,7 @@ document.getElementById('go').onclick = async () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ref: 'main', inputs: { mode: 'gen', config: JSON.stringify(cfg) } })
     });
-    L('dispatch ok — жду ран (~15 c)...');
+    L('dispatch ok — жду ран...');
     let run = null;
     for (let i = 0; i < 12; i++) {
       await new Promise(s => setTimeout(s, 8000));
@@ -108,23 +109,20 @@ document.getElementById('go').onclick = async () => {
       L('run завершён: ' + st.conclusion);
       break;
     }
-    if (run.conclusion === 'failure' || false) {}
-    const files = await (await api('/repos/' + REPO + '/contents/output/gen')).json();
-    const pngs = (Array.isArray(files) ? files : []).filter(f => f.name.endsWith('.png'));
-    if (!pngs.length) { L('в output/gen нет картинок'); btn.disabled = false; return; }
-    pngs.sort((a, b) => new Date(b.created_at || 0) - new Date(a.created_at || 0) || (b.size - a.size));
-    const f = pngs[pngs.length - 1];
-    L('скачиваю ' + f.name + ' (' + Math.round(f.size / 1024) + ' KB)...');
-    const blob = await (await api('/repos/' + REPO + '/contents/output/gen/' + f.name, { headers: { 'Accept': 'application/vnd.github.raw' } })).blob();
-    document.getElementById('img').src = URL.createObjectURL(blob);
-    let stateTxt = '';
-    try {
-      const s = await (await api('/repos/' + REPO + '/contents/output/gen_state.json')).json();
-      stateTxt = JSON.parse(atob(s.content.replace(/\s/g, '')));
-    } catch (e) {}
+    const arts = await (await api('/repos/' + REPO + '/actions/runs/' + run.id + '/artifacts')).json();
+    const art = (arts.artifacts || []).find(a => a.name === 'gen-output');
+    if (!art) { L('артефакт gen-output не найден'); btn.disabled = false; return; }
+    const zr = await fetch(art.download_url, { headers: { 'Authorization': 'token ' + token } });
+    const buf = await zr.arrayBuffer();
+    const zip = await window.JSZip.loadAsync(buf);
+    const names = Object.keys(zip.files).filter(n => n.endsWith('.png'));
+    if (!names.length) { L('в артефакте нет png'); btn.disabled = false; return; }
+    const png = names.sort()[0];
+    const imgData = await zip.file(png).async('blob');
+    document.getElementById('img').src = URL.createObjectURL(imgData);
     document.getElementById('resultCard').style.display = 'block';
-    document.getElementById('imgMeta').textContent = 'файл: ' + f.name + (stateTxt ? ' · seed ' + stateTxt.seed + ' · ' + stateTxt.seconds + ' c' : '') + ' · всего генераций: ' + pngs.length;
-    L('готово ✔');
+    document.getElementById('imgMeta').textContent = 'файл: ' + png + ' · seed ' + cfg.seed + ' · ' + cfg.gen_steps + ' шагов · cfg ' + cfg.guidance;
+    L('готово ✔ ' + png);
   } catch (e) {
     L('ОШИБКА: ' + e.message);
   }
